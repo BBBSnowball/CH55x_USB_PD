@@ -60,3 +60,4 @@ Objects/
 # Eclipse SDCC
 .settings/
 Release/
+/build

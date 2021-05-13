@@ -148,7 +148,7 @@
 
 
 
-#include "ch554_conf.H"
+#include "ch554_conf.h"
 
 #ifdef CLOCK_FREQ_32
 #define FREQ_SYS 32000000
@@ -176,8 +176,8 @@
 #endif
 
 #ifdef __SDCC
-	#include "include\ch554.h"
-	#include "include\ch554_usb.h"
+	#include "include/ch554.h"
+	#include "include/ch554_usb.h"
 #endif
 
 #ifdef __C51__
