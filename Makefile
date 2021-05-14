@@ -22,3 +22,6 @@ build/$(NAME).bin: build/$(NAME).ihx
 build/$(NAME).hex: build/$(NAME).ihx
 	packihx "$<" > "$@"
 
+flash: build/$(NAME).bin
+	python3 -m ch55xtool -r -f "$@"
+
