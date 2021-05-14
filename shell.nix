@@ -3,27 +3,16 @@
 let
   ch55xtool = ppkgs: ppkgs.buildPythonPackage {
     pname = "ch55xtool";
-    version = "0.1-8bf717";
+    version = "0.0.1-6c6378";
 
     src = pkgs.fetchFromGitHub {
-      owner = "MarsTechHAN";
-      repo  = "ch552tool";
-      rev = "8bf717da5787afb11a4b29ac51035fe47e0a724e";
-      sha256 = "sha256-TOT0ix+dYLpyhoNtc9lqCgRdvnXsmaxmCckigaVy4V0=";
+      owner = "BBBSnowball";
+      repo  = "ch55xtool";
+      rev = "d3aa8e55591193d4b6a43021b5ebfc1a6eb7c438";
+      sha256 = "sha256-xIC43CPhJbXAR62/AIJvSnQBWDcVcF+N9eZ3H8ziz6U=";
     };
 
     propagatedBuildInputs = with ppkgs; [ pyusb ];
-
-    preBuild = ''
-      sed -i 's/pyusb>=1.1.0/pyusb>=1.0/' setup.py
-      sed -i 's/\])$/], entry_points={"console_scripts": ["ch55xtool = ch55xtool.ch55xtool:main"]})/' setup.py
-
-      mkdir bin
-      cat >bin/ch55xtool <<EOF
-      #!/usr/bin/env python
-      exec python -m ch55xtool "$@"
-      EOF
-    '';
   };
 in
 pkgs.mkShell {
